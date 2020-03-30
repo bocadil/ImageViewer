@@ -8,22 +8,28 @@
 
 ![Single image view](https://github.com/Krisiacik/ImageViewer/blob/master/Documentation/single.gif)
 
-![Gallery](https://github.com/Krisiacik/ImageViewer/blob/master/Documentation/gallery.gif)
-
 For the latest changes see the [CHANGELOG](CHANGELOG.md)
+
+## Additions
+
+Changes to the original version:
+
+- Fix Rotation bug (2020-03-30)
+- Make defaultInsets open (2020-03-30)
+- Make statusBarHidden public (2020-03-30)
 
 ## Install
 
 ### CocoaPods
 
 ```ruby
-pod 'ImageViewer'
+pod 'ImageViewer', :git => 'https://github.com/bocadil/ImageViewer'
 ```
 
 ### Carthage
 
 ```ruby
-github "Krisiacik/ImageViewer"
+github "bocadil/ImageViewer"
 ```
 
 ## Sample Usage

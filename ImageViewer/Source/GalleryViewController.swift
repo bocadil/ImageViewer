@@ -47,7 +47,7 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
     fileprivate var seeAllCloseLayout = ButtonLayout.pinRight(8, 16)
     fileprivate var thumbnailsLayout = ButtonLayout.pinLeft(8, 16)
     fileprivate var deleteLayout = ButtonLayout.pinRight(8, 66)
-    fileprivate var statusBarHidden = true
+    public var statusBarHidden = true
     fileprivate var overlayAccelerationFactor: CGFloat = 1
     fileprivate var rotationDuration = 0.15
     fileprivate var rotationMode = GalleryRotationMode.always
@@ -326,7 +326,7 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
         layoutScrubber()
     }
 
-    private var defaultInsets: UIEdgeInsets {
+    open var defaultInsets: UIEdgeInsets {
         if #available(iOS 11.0, *) {
             return view.safeAreaInsets
         } else {
@@ -518,7 +518,7 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
         /// of key Window will rotate all app's content with it via affine transform and from the perspective of the
         /// gallery it is just a simple relayout. Allowing access to remaining code only makes sense if the app is
         /// portrait only but we still want to support rotation inside the gallery.
-        guard UIApplication.isPortraitOnly else { return }
+        guard rotationMode == .always, UIApplication.isPortraitOnly else { return }
 
         guard UIDevice.current.orientation.isFlat == false &&
             isAnimating == false else { return }
