@@ -436,6 +436,19 @@ open class GalleryViewController: UIPageViewController, ItemControllerDelegate {
             self?.view.isUserInteractionEnabled = true
         }
     }
+    
+    @objc public func deleteItemAtIndex(index: Int) {
+        
+        deleteButton?.isEnabled = false
+        view.isUserInteractionEnabled = false
+        
+        itemsDelegate?.removeGalleryItem(at: index)
+        removePage(atIndex: index) {
+            [weak self] in
+            self?.deleteButton?.isEnabled = true
+            self?.view.isUserInteractionEnabled = true
+        }
+    }
 
     //ThumbnailsimageBlock
 

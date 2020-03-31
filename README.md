@@ -17,6 +17,7 @@ Changes to the original version:
 - Fix Rotation bug (2020-03-30)
 - Make defaultInsets open (2020-03-30)
 - Make statusBarHidden public (2020-03-30)
+- Create deleteItemAtIndex(index: Int) (2020-03-31)
 
 ## Install
 
